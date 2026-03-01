@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUDA POS - Kategori</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">...</nav>
+    <main class="container">
+        <div class="page-header">
+            <h1>Daftar Kategori</h1>
+            <button id="addCategoryBtn" class="btn-primary">+ Tambah Kategori</button>
+        </div>
+        <div class="filters">
+            <input type="text" id="searchCategory" placeholder="Cari kategori...">
+        </div>
+        <div id="categoryTable" class="table-container"></div>
+    </main>
+
+    <!-- Modal Sederhana -->
+    <div id="categoryModal" class="modal">
+        <div class="modal-content small">
+            <span class="close">&times;</span>
+            <h3 id="categoryModalTitle">Tambah Kategori</h3>
+            <form id="categoryForm">
+                <div class="form-group">
+                    <label>Nama Kategori</label>
+                    <input type="text" id="categoryName" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancelCategory">Batal</button>
+                    <button type="submit">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/categories.js"></script>
+</body>
+</html>
