@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUDA POS - Produk</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">MUDA POS</div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="active">Produk</a></li>
+            <li><a href="categories.html">Kategori</a></li>
+            <li><a href="units.html">Satuan</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="page-header">
+            <h1>Daftar Produk</h1>
+            <button id="addProductBtn" class="btn-primary">+ Tambah Produk</button>
+        </div>
+        <div class="filters">
+            <input type="text" id="searchInput" placeholder="Cari nama, kode, barcode...">
+            <select id="categoryFilter">
+                <option value="">Semua Kategori</option>
+            </select>
+        </div>
+        <div id="productTable" class="table-container">
+            <!-- Tabel akan di-render oleh JS -->
+        </div>
+    </main>
+
+    <!-- Modal for Product Form -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Tambah Produk</h2>
+            <form id="productForm">
+                <!-- Fields akan diisi via JS -->
+                <div id="formFields"></div>
+                <div class="form-actions">
+                    <button type="button" id="cancelBtn">Batal</button>
+                    <button type="submit">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Conversion -->
+    <div id="conversionModal" class="modal">
+        <div class="modal-content small">
+            <span class="close">&times;</span>
+            <h3>Tambah Konversi</h3>
+            <form id="conversionForm">
+                <!-- Fields konversi -->
+                <div class="form-group">
+                    <label>Satuan</label>
+                    <select id="convUnit" required></select>
+                </div>
+                <div class="form-group">
+                    <label>Nilai Satuan</label>
+                    <input type="number" id="convValue" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label>Barcode Satuan</label>
+                    <input type="text" id="convBarcode">
+                </div>
+                <div class="form-group">
+                    <label>SKU</label>
+                    <input type="text" id="convSku">
+                </div>
+                <div class="form-group">
+                    <label>Harga Dasar</label>
+                    <input type="number" id="convPriceBase" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label>Harga Jual</label>
+                    <input type="number" id="convPriceSell" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label>Poin Pelanggan</label>
+                    <input type="number" id="convPointsCustomer">
+                </div>
+                <div class="form-group">
+                    <label>Poin Sales</label>
+                    <input type="number" id="convPointsSales">
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancelConversion">Batal</button>
+                    <button type="submit">Selesai</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>
