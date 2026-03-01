@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUDA POS - Satuan</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">...</nav>
+    <main class="container">
+        <div class="page-header">
+            <h1>Daftar Satuan</h1>
+            <button id="addUnitBtn" class="btn-primary">+ Tambah Satuan</button>
+        </div>
+        <div class="filters">
+            <input type="text" id="searchUnit" placeholder="Cari Satuan...">
+        </div>
+        <div id="unitTable" class="table-container"></div>
+    </main>
+
+    <!-- Modal Sederhana -->
+    <div id="unitModal" class="modal">
+        <div class="modal-content small">
+            <span class="close">&times;</span>
+            <h3 id="unitModalTitle">Tambah Satuan</h3>
+            <form id="unitForm">
+                <div class="form-group">
+                    <label>Nama Satuan</label>
+                    <input type="text" id="unitName" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancelUnit">Batal</button>
+                    <button type="submit">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/units.js"></script>
+</body>
+</html>
